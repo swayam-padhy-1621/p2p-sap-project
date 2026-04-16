@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>P2P SAP Simulation</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        a {
+            display: block;
+            margin: 10px 0;
+            color: blue;
+            font-weight: bold;
+        }
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+            width: 50%;
+            background: white;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<h1>P2P SAP Simulation</h1>
+
+<a href="/pr">Create Purchase Requisition</a>
+<a href="/po">Create Purchase Order</a>
+<a href="/gr">Goods Receipt</a>
+<a href="/invoice">Invoice</a>
+
+<hr>
+
+<h2>Purchase Requisition List</h2>
+<table>
+<tr>
+    <th>ID</th>
+    <th>Item</th>
+    <th>Quantity</th>
+</tr>
+
+{% for row in pr %}
+<tr>
+    <td>{{ row[0] }}</td>
+    <td>{{ row[1] }}</td>
+    <td>{{ row[2] }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<hr>
+
+<h2>Purchase Order List</h2>
+<table>
+<tr>
+    <th>ID</th>
+    <th>Vendor</th>
+</tr>
+
+{% for row in po %}
+<tr>
+    <td>{{ row[0] }}</td>
+    <td>{{ row[1] }}</td>
+</tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
